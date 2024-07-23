@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Jadwal extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['id_user','tanggal','shift'];
+
+    public function user(){
+        return $this->belongsTo(User::class,'id_user');
+    }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreJadwalRequest;
 use App\Http\Requests\UpdateJadwalRequest;
 use App\Models\Jadwal;
+use Illuminate\Support\Facades\Http;
 
 class JadwalController extends Controller
 {
@@ -13,7 +14,11 @@ class JadwalController extends Controller
      */
     public function index()
     {
-        //
+        $jadwals = Http::get("http://localhost:8080/api/jadwals");
+        $jadwals = json_decode($jadwals);
+        return view('dashboard', [
+            'jadwals' => $jadwals
+        ]);
     }
 
     /**

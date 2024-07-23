@@ -9,12 +9,15 @@
             <h1>Tanggal</h1>
             <h1>Shift</h1>
         </div>
+        @foreach ( $jadwals as $item )
         <div class="grid grid-cols-4 text-center mt-4">
-            <h1>Rifqi</h1>
-            <h1>Kwu</h1>
-            <h1>12/12/12</h1>
-            <h1>Pagi</h1>
+            <h1>{{$item->user->name}}</h1>
+            <h1>{{$item->user->divisi}}</h1>
+            <h1> {{ date('d/m/Y', strtotime($item->tanggal)) }} </h1>
+            <h1>{{$item->shift}}</h1>
         </div>
+        @endforeach
+
     </div>
    <div class="flex justify-end">
     <a href="#"><button class="btn btn-primary rounded-xl w-36">Absen</button></a>
