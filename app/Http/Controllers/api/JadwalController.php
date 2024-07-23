@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Jadwal;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,7 +24,18 @@ class JadwalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = [
+            "id_user" => $request->id_user,
+            "tanggal" => $request->tanggal,
+            "shift" => $request->shift
+        ];
+
+        try {
+            $jadwal = Jadwal::create($data);
+        } catch (QueryException $e){
+            return response()->json($e,400);
+        }
+        return response($jadwal,201);
     }
 
     /**

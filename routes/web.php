@@ -10,4 +10,5 @@ Route::get('/', function () {
 });
 
 // Route::get('/layout',[Controller::class,'index']);
-Route::get('/layout', [JadwalController::class, 'index']);
+Route::get('/jadwal', [JadwalController::class, 'index']);
+Route::post('/jadwal', [JadwalController::class, 'store']);
