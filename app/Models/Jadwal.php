@@ -9,7 +9,7 @@ class Jadwal extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id_user','tanggal','shift'];
+    protected $fillable = ['id_user','tanggal','shift','absen'];
 
     public function user(){
         return $this->belongsTo(User::class,'id_user');

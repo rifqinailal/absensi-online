@@ -27,7 +27,8 @@ class JadwalController extends Controller
         $data = [
             "id_user" => $request->id_user,
             "tanggal" => $request->tanggal,
-            "shift" => $request->shift
+            "shift" => $request->shift,
+            "absen" => $request->absen
         ];
 
         try {

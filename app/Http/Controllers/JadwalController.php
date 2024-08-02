@@ -42,7 +42,8 @@ class JadwalController extends Controller
         $data = [
             'id_user' => $request->id_user,
             'tanggal' => $request->tanggal,
-            'shift' => $request->shift
+            'shift' => $request->shift,
+            "absen" => $request->absen
         ];
         $jadwal = Http::post('http://localhost:8080/api/jadwal', $data);
         return redirect('/jadwal');

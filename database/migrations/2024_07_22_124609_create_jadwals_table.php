@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_user');
             $table->date('tanggal');
             $table->string('shift');
+            $table->string('absen');
             $table->timestamps();
         });
     }
